@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blotter Form</title>
+  <style>
+    .form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .editor {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-height: 150px;
+      padding: 0.75rem;
+      background-color: #fff;
+    }
+
+    .editor:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    .form-actions {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .form-actions button {
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .form-actions button:hover {
+      background-color: #0056b3;
+    }
+
+    #previewModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #previewModal .modal-content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 800px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <form id="blotterForm" method="post" action="generatePdf.php" target="_blank">
+      <div class="form-group">
+        <label for="complainant">Complainant</label>
+        <input type="text" id="complainant" name="complainant" required>
+      </div>
+
+      <div class="form-group">
+        <label for="respondent">Respondent</label>
+        <input type="text" id="respondent" name="respondent" required>
+      </div>
+
+      <div class="form-group">
+        <label for="victim">Victim</label>
+        <input type="text" id="victim" name="victim" required>
+      </div>
+
+      <div class="form-group">
+        <label for="narrative">Narrative</label>
+        <div id="narrativeEditor" class="editor" contenteditable="true"></div>
+        <textarea name="narrative" id="narrative" style="display:none;"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location of Incidence</label>
+        <input type="text" id="location" name="location" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" onclick="previewForm()">Preview</button>
+        <button type="submit" style="display: none;" id="submitBtn">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="previewModal">
+    <div class="modal-content">
+      <h2>Preview Blotter Report</h2>
+      <p><strong>Complainant:</strong> <span id="preview_complainant"></span></p>
+      <p><strong>Respondent:</strong> <span id="preview_respondent"></span></p>
+      <p><strong>Victim:</strong> <span id="preview_victim"></span></p>
+      <p><strong>Narrative:</strong></p>
+      <div id="preview_narrative" style="border: 1px solid #ccc; padding: 10px; background: #f5f5f5;"></div>
+      <p><strong>Location:</strong> <span id="preview_location"></span></p>
+      <p><strong>Date:</strong> <span id="preview_date"></span></p>
+
+      <form id="previewForm" method="post" action="generatePdf.php" target="_blank">
+        <input type="hidden" name="complainant" id="hidden_complainant">
+        <input type="hidden" name="respondent" id="hidden_respondent">
+        <input type="hidden" name="victim" id="hidden_victim">
+        <input type="hidden" name="narrative" id="hidden_narrative">
+        <input type="hidden" name="location" id="hidden_location">
+        <input type="hidden" name="date" id="hidden_date">
+        <div class="form-actions">
+          <button type="button" onclick="window.print()">🖨️ Print</button>
+          <button type="button" onclick="editForm()">✏️ Edit</button>
+          <button type="button" onclick="submitForm()">✅ Submit</button>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Save content from the rich text editor to hidden textarea on submit
+    document.querySelector('form').addEventListener('submit', function () {
+      const editorContent = document.getElementById('narrativeEditor').innerHTML;
+      document.getElementById('narrative').value = editorContent;
+    });
+
+    function previewForm() {
+      // Get values from form
+      const complainant = document.getElementById('complainant').value;
+      const respondent = document.getElementById('respondent').value;
+      const victim = document.getElementById('victim').value;
+      const narrative = document.getElementById('narrativeEditor').innerHTML;
+      const location = document.getElementById('location').value;
+      const date = document.getElementById('date').value;
+
+      // Set values in preview
+      document.getElementById('preview_complainant').textContent = complainant;
+      document.getElementById('preview_respondent').textContent = respondent;
+      document.getElementById('preview_victim').textContent = victim;
+      document.getElementById('preview_narrative').innerHTML = narrative;
+      document.getElementById('preview_location').textContent = location;
+      document.getElementById('preview_date').textContent = date;
+
+      // Fill hidden inputs in preview form
+      document.getElementById('hidden_complainant').value = complainant;
+      document.getElementById('hidden_respondent').value = respondent;
+      document.getElementById('hidden_victim').value = victim;
+      document.getElementById('hidden_narrative').value = narrative;
+      document.getElementById('hidden_location').value = location;
+      document.getElementById('hidden_date').value = date;
+
+      // Show modal
+      document.getElementById('previewModal').style.display = 'flex';
+    }
+
+    // Optional: close modal by clicking outside
+    window.addEventListener('click', function (e) {
+      const modal = document.getElementById('previewModal');
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    function editForm() {
+    // Close the modal to return to form
+    document.getElementById('previewModal').style.display = 'none';
+  }
+
+  function submitForm() {
+    // Transfer narrative content to hidden textarea
+    const editorContent = document.getElementById('narrativeEditor').innerHTML;
+    document.getElementById('narrative').value = editorContent;
+
+    // Submit the original form (not preview form)
+    document.getElementById('blotterForm').submit();
+
+    // Clear form fields after slight delay (after submission)
+    setTimeout(() => {
+      document.getElementById('blotterForm').reset();
+      document.getElementById('narrativeEditor').innerHTML = '';
+      document.getElementById('previewModal').style.display = 'none';
+    }, 500);
+  }
+  </script>
+
+
+
+
+
+<!--REFERENCE ONLY
+<div id="previewContent" class="preview-content">
+  <h2 style="text-align: center;">Blotter Report Preview</h2>
+  <div class="preview-table">
+    <div class="preview-row">
+      <div class="preview-label">Date:</div>
+      <div class="preview-value" id="preview_complaint_date"></div>
+    </div>
+    <div class="preview-row">
+      <div class="preview-label">Time:</div>
+      <div class="preview-value" id="preview_complaint_time"></div>
+    </div>
+    <div class="preview-row">
+      <div class="preview-label">Complainant:</div>
+      <div class="preview-value" id="preview_complainant"></div>
+    </div>
+    <div class="preview-row">
+      <div class="preview-label">Address:</div>
+      <div class="preview-value" id="preview_address"></div>
+    </div>
+    <div class="preview-row">
+      <div class="preview-label">Contact:</div>
+      <div class="preview-value" id="preview_contact"></div>
+    </div>
+    <div class="preview-row">
+      <div class="preview-label">Person to Complain:</div>
+      <div class="preview-value" id="preview_person_to_complain"></div>
+    </div>
+    <div class="preview-row">
+      <div class="preview-label">Narrative:</div>
+      <div class="preview-value" id="preview_narrative"></div>
+    </div>
+  </div>
+
+  <div style="text-align: right; margin-top: 1rem;">
+    <button onclick="printPreview()">Print</button>
+  </div>
+</div>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+

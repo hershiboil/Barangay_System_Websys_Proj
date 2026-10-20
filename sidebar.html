@@ -1,0 +1,537 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="sidebar.css">
+
+  <style>
+     .carousel-control-prev-icon, .carousel-control-next-icon {
+      background-color: white !important;  
+    }
+
+    .carousel-item {
+      padding-bottom: 60px !important;  
+    }
+    
+    .carousel-indicators button {
+      background-color: cornflowerblue !important;
+      width: 40px !important; 
+      height: 7px !important;
+    }
+
+    .barangay-officials h2 {
+      font-weight: bold;
+      color: black;
+    }
+
+  .official-name {
+    margin-top: 15px;
+    color: cornflowerblue;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  .official-position {
+    color: #555;
+    font-style: italic;
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: cornflowerblue;
+    padding: 15px;
+    border-radius: 50%;
+  }
+
+
+  </style>
+
+  
+</head>
+<body>
+
+<div class="wrapper d-flex">
+    
+    <!-- Sidebar -->
+    <nav id="sidebar">
+  
+        <div class="sidebar-header">
+          <img src="barangayBalinad.png" class="logo-img"/>
+          <div class="text-conatinerp">
+            <h3>CONNECT</h3>
+            <p>Balinad Daraga, Albay</p>
+          </div>
+        </div>
+
+        <ul class="list-unstyled components">
+
+            <li  class="">
+              <a href="#homeSubmenu1"><i class="material-icons">dashboard</i><span>Dashboard
+    </span></a>
+          </li>
+            
+          <li class="dropdown">
+            <a href="#dropdownMenu1" class="dropdown-toggle" data-bs-toggle="collapse" aria-expanded="false">
+              <i class="material-icons">menu</i>
+              <span>Dropdown</span>
+            </a>
+            <ul class="collapse list-unstyled menu" id="dropdownMenu1">
+              <li><a href="#">Sub Item 1</a></li>
+              <li><a href="#">Sub Item 2</a></li>
+            </ul>
+          </li>
+          
+            
+             <li class="dropdown">
+                <a href="#pageSubmenu3" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+
+                <i class="material-icons">equalizer</i>
+            
+                
+                <span>chart</span></a>
+                <ul class="collapse list-unstyled menu" id="pageSubmenu3">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+              <li class="dropdown">
+                <a href="#pageSubmenu4" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="material-icons">extension</i><span>ui element</span></a>
+                <ul class="collapse list-unstyled menu" id="pageSubmenu4">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="dropdown">
+                <a href="#pageSubmenu5" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="material-icons">border_color</i><span>forms</span></a>
+                <ul class="collapse list-unstyled menu" id="pageSubmenu5">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+                      
+           <li class="dropdown">
+            <a href="#pageSubmenu6" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="material-icons">grid_on</i><span>tables</span></a>
+                <ul class="collapse list-unstyled menu" id="pageSubmenu6">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+           
+           
+             <li class="dropdown">
+                <a href="#pageSubmenu7" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="material-icons">content_copy</i><span>Pages</span></a>
+                <ul class="collapse list-unstyled menu" id="pageSubmenu7">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+           
+           <li class="">
+                <a href="#"><i class="material-icons">date_range</i><span>copy</span></a>
+            </li>
+            
+             <li  class="">
+                <a href="#"><i class="material-icons">library_books</i><span>Calender
+                </span></a>
+            </li>
+                       
+        </ul>
+
+    </nav>
+
+  <!--main content-->
+  <div id="content" class="flex-grow-1">
+    <div class="top-navbar px-3 py-2 d-flex align-items-center justify-content-between" id="topnavbar" >
+        <div class="d-flex justify-content-between align-items-center flex-wrap flex-md-nowrap w-100">
+      
+          <!-- Left side: Toggle + Calendar -->
+          <div class="d-flex align-items-center">
+            <div class="sidebarToggleContainer me-3" id="sidebarToggleContainer">
+              <button id="sidebarToggle" class="btn btn-sm toggle-btn">
+                <i class="material-icons" id="toggleIcon">chevron_left</i>
+              </button>
+            </div>
+      
+            <div class="date-time d-flex align-items-center">
+              <span class="material-icons me-1">calendar_today</span>
+              <span id="currentDateTime" class="small text-dark fw-medium"></span>
+            </div>
+          </div>
+      
+          <!-- Right side: Notification + Profile -->
+          <div class="xp-profilebar d-flex align-items-center ms-auto">
+            <nav class="navbar p-0">
+              <ul class="nav navbar-nav flex-row align-items-center mb-0">
+
+                <!-- Notification -->
+                <li class="nav-item dropdown me-3">
+                  <a href="#" class="nav-link" id="notificationToggle" >
+                    <span class="material-icons">notifications</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end position-absolute" id="notificationDropdown">
+                    <li><a class="dropdown-item" href="#">Notification 1</a></li>
+                  </ul>
+                </li>
+                  
+      
+                <!-- Profile Dropdown -->
+                <li class="nav-item dropdown position-relative">
+                  <a class="nav-link d-flex align-items-center" href="#"
+                   id="profileToggle">
+                    <img src="user.png" style="width:40px; border-radius:50%; box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);" />
+                    <span class="xp-user-live ms-1"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end small-menu position-absolute" id="profileDropdown">
+                    <li><a class="dropdown-item" href="#"><span class="material-icons me-2">person_outline</span>Profile</a></li>
+                    <li><a class="dropdown-item" href="#"><span class="material-icons me-2">settings</span>Settings</a></li>
+                    <li><a class="dropdown-item" href="#"><span class="material-icons me-2">logout</span>Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+      
+        </div>
+      </div>      
+    <!--end of top-navbar-->
+    
+    <div class="sk-officials">
+      <div class="container py-5">
+        <h2 class="text-center mb-4">SK OFFICIALS</h2>
+    
+        <div id="skCarousel" class="carousel slide carousel-dark" data-bs-ride="carousel">
+          <div class="carousel-inner" id="skCarouselItems"></div>
+    
+          <div class="carousel-indicators" id="skCarouselIndicators"></div>
+    
+          <button class="carousel-control-prev" type="button" data-bs-target="#skCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#skCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  <!-- Bootstrap JS -->
+   <!-- Bootstrap JS Bundle (with Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    const toggleButton = document.getElementById('sidebarToggle');
+    const toggleIcon = document.getElementById('toggleIcon');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+  
+    // Function to update toggle button position based on sidebar state
+    function updateTogglePosition() {
+      const isMobile = window.innerWidth <= 991;
+  
+      // On small screens
+      if (isMobile) {
+        if (sidebar.classList.contains('active')) {
+          sidebarToggleContainer.style.left= '234px';
+          toggleButton.style.left = '239px';
+          sidebarToggleContainer.style.background = '#ebebeb'; // Sidebar expanded
+        } else {
+          topnavbar.style.margin = '14px 10px 0px 40px';
+          maincontent.style.margin = '14px 10px 0px 40px';
+          toggleButton.style.left = '75px'; // Sidebar collapsed
+          sidebarToggleContainer.style.left = '71px';
+          sidebarToggleContainer.style.background = '#0077f7';
+        }
+      } else {
+        if (sidebar.classList.contains('sidebar-collapsed')) {
+          topnavbar.style.margin = '14px 10px 0px 120px';
+          maincontent.style.margin = '14px 10px 0px 120px';
+          sidebarToggleContainer.style.left = '71px';
+          sidebarToggleContainer.style.background = '#0077f7';
+          toggleButton.style.left = '75px'; // Collapsed width
+        } else {
+        topnavbar.style.margin = '14px 10px 0px 285px';
+        maincontent.style.margin = '14px 10px 0px 285px';
+        sidebarToggleContainer.style.left= '234px';
+        sidebarToggleContainer.style.background = '#ebebeb';
+          toggleButton.style.left = '239px'; // Expanded width
+        }
+      }
+    }
+  
+    // Click event: toggle sidebar and update button position
+    toggleButton.addEventListener('click', () => {
+      const isMobile = window.innerWidth <= 991;
+  
+      if (isMobile) {
+        sidebar.classList.toggle('active');
+      } else {
+        sidebar.classList.toggle('sidebar-collapsed');
+      }
+  
+      // Update toggle button position
+      updateTogglePosition();
+  
+      // Change icon direction
+      if (
+        sidebar.classList.contains('sidebar-collapsed') || 
+        (window.innerWidth <= 991 && !sidebar.classList.contains('active'))
+      ) {
+        toggleIcon.innerText = 'chevron_right';
+      } else {
+        toggleIcon.innerText = 'chevron_left';
+      }
+    });
+  
+    // Window resize event: reset sidebar state and button position
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 991) {
+        sidebar.classList.remove('active'); // Remove mobile state
+      } else {
+        sidebar.classList.remove('sidebar-collapsed'); // Remove desktop collapsed state
+        content.classList.remove('sidebar-collapsed');
+      }
+  
+      // Set icon to default and update button position
+      toggleIcon.innerText = 'chevron_left';
+      updateTogglePosition();
+    });
+  
+    // Collapse dropdowns inside sidebar (optional)
+    document.addEventListener('DOMContentLoaded', () => {
+  // === SIDEBAR DROPDOWNS ===
+  const dropdowns = document.querySelectorAll('#sidebar .dropdown-toggle');
+
+  dropdowns.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const parent = toggle.closest('.dropdown');
+      parent.classList.toggle('open');
+    });
+  });
+
+  // Set toggle button position on page load
+  updateTogglePosition();
+
+  // === NAVBAR NOTIFICATION + PROFILE DROPDOWNS ===
+  const notificationToggle = document.getElementById('notificationToggle');
+  const notificationDropdown = document.getElementById('notificationDropdown');
+  const profileToggle = document.getElementById('profileToggle');
+  const profileDropdown = document.getElementById('profileDropdown');
+
+  function closeAllDropdowns() {
+    notificationDropdown.classList.remove('show');
+    profileDropdown.classList.remove('show');
+  }
+
+  notificationToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isShown = notificationDropdown.classList.contains('show');
+    closeAllDropdowns();
+    if (!isShown) {
+      notificationDropdown.classList.add('show');
+    }
+  });
+
+  profileToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isShown = profileDropdown.classList.contains('show');
+    closeAllDropdowns();
+    if (!isShown) {
+      profileDropdown.classList.add('show');
+    }
+  });
+
+  // Close if clicking outside
+  document.addEventListener('click', (event) => {
+    if (
+      !notificationToggle.contains(event.target) &&
+      !notificationDropdown.contains(event.target) &&
+      !profileToggle.contains(event.target) &&
+      !profileDropdown.contains(event.target)
+    ) {
+      closeAllDropdowns();
+    }
+  });
+});
+
+
+ 
+  function updateDateTime() {
+    const now = new Date();
+    const options = {
+      weekday: 'short', year: 'numeric', month: 'short',
+      day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+    };
+    document.getElementById('currentDateTime').textContent = now.toLocaleString('en-US', options);
+  }
+
+  // Initial load
+  updateDateTime();
+
+  // Update every second
+  setInterval(updateDateTime, 1000);
+
+
+      const officials = [
+        { name: 'Leni Robredo', position: 'Barangay Chairman', image: 'img/leni.jpg' },
+        { name: 'Risa Hontiveros', position: 'Barangay Secretary', image: 'img/risa.jpg' },
+        { name: 'Rhona Lumbes', position: 'Barangay Kagawad', image: 'img/rhona.jpg' },
+        { name: 'Bam Aquino', position: 'Barangay Kagawad', image: 'img/bam.jpg' },
+        { name: 'Kiko Pangilinan', position: 'Barangay Kagawad', image: 'img/kiko.jpg' },
+        { name: 'Stacey Sevilleja', position: 'Barangay Kagawad', image: 'img/stacey.jpg' },
+        { name: 'Colet Vergara', position: 'Barangay Kagawad', image: 'img/colet.jpg' },
+        { name: 'Sheena Catacutan', position: 'Barangay Kagawad', image: 'img/sheena.jpg' },
+        { name: 'Maloi Ricalde', position: 'Barangay Kagawad', image: 'img/maloi.jpg' },
+      ];
+      
+      function generateSlides() {
+        const carouselItems = document.getElementById('carouselItems');
+        const carouselIndicators = document.getElementById('carouselIndicators');
+        let slidesPerGroup;
+      
+        if (window.innerWidth >= 992) {
+          slidesPerGroup = 3;  
+        } else if (window.innerWidth >= 768) {
+          slidesPerGroup = 2;  
+        } else {
+          slidesPerGroup = 1;  
+        }
+      
+        let slideCount = 0;
+      
+        carouselItems.innerHTML = '';
+        carouselIndicators.innerHTML = '';
+      
+        // Generate slides
+        officials.forEach((official, index) => {
+          if (index % slidesPerGroup === 0) {
+            // Create a new slide
+            slideCount++;
+            const slide = document.createElement('div');
+            slide.classList.add('carousel-item');
+            if (index === 0) slide.classList.add('active');
+      
+            const row = document.createElement('div');
+            row.classList.add('row', 'justify-content-center');
+      
+            // Add images for this slide
+            for (let i = 0; i < slidesPerGroup && index + i < officials.length; i++) {
+              const officialData = officials[index + i];
+              const col = document.createElement('div');
+              col.classList.add('col-12', 'col-sm-6', 'col-md-6', 'col-lg-4', 'text-center');
+      
+              const img = document.createElement('img');
+              img.src = officialData.image;
+              img.classList.add('d-block', 'w-100');
+              img.style.height = '300px';
+              img.style.objectFit = 'cover';
+              img.style.marginBottom = '20px';
+      
+              const name = document.createElement('h2');
+              name.classList.add('fs-5');
+              name.textContent = officialData.name;
+              name.style.fontWeight = 'bold';
+              name.style.color = 'black';
+      
+              const position = document.createElement('p');
+              position.classList.add('text-primary', 'fw-medium');
+              position.textContent = officialData.position;
+      
+              col.appendChild(img);
+              col.appendChild(name);
+              col.appendChild(position);
+              row.appendChild(col);
+            }
+      
+            slide.appendChild(row);
+            carouselItems.appendChild(slide);
+      
+            // Create indicator
+            const indicator = document.createElement('button');
+            indicator.type = 'button';
+            indicator.setAttribute('data-bs-target', '#carouselExampleDark');
+            indicator.setAttribute('data-bs-slide-to', slideCount - 1);
+            indicator.setAttribute('aria-label', `Slide ${slideCount}`);
+            if (slideCount === 1) {
+              indicator.classList.add('active');
+              indicator.setAttribute('aria-current', 'true');
+            }
+            carouselIndicators.appendChild(indicator);
+          }
+        });
+      }
+      
+      // Adjust slides on window resize
+      window.addEventListener('resize', generateSlides);
+      
+      // Initialize slides when the page loads
+      generateSlides();
+      
+
+  </script>
+  
+  
+</body>
+</html>
+

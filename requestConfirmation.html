@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>CRUD Dashboard</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        .custom-alert {
+            background-color: #d4edda; 
+            color: #155724; 
+            border: none;
+            border-radius: 10px; 
+            padding: 20px;
+            font-size: 18px;
+            box-shadow: 4px 4px 10px px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .custom-alert::before {
+            content: "● ● ●";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: gray;
+        }
+
+        .alert-title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+        .custom-alert {
+            font-size: 16px;
+            padding: 15px;
+        }
+        .alert-title {
+            font-size: 18px;
+        }
+    }
+
+        @media (max-width: 480px) {
+            .custom-alert {
+                font-size: 14px;
+                padding: 12px;
+            }
+            .alert-title {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="body-overlay"></div>
+
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>
+                    <img src="img/haha.png" class="img-fluid" style="height: 90px; width: 90px" />
+                    <span>CONNECT</span>
+                </h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="home.html" class="load-page" data-page="home.html">
+                        <i class="material-icons">home</i>Home
+                    </a>
+                </li>
+                <li>
+                    <a href="request.html" class="load-page" data-page="request.html">
+                        <i class="material-icons">description</i><span>Request</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="report.html" class="load-page" data-page="report.html">
+                        <i class="material-icons">report</i><span>Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="blotter.html" class="load-page" data-page="blotter.html">
+                        <i class="material-icons">gavel</i><span>Blotter</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content">
+            <div class="top-navbar">
+                <div class="xp-topbar">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="xp-menubar">
+                                <span class="material-icons text-white">signal_cellular_alt</span>
+                            </div>
+                        </div>
+                        <div class="col-6 text-right">
+                            <nav class="navbar p-0">
+                                <ul class="nav navbar-nav flex-row ml-auto">
+                                    <li class="dropdown nav-item active">
+                                        <a href="#" class="nav-link" data-toggle="dropdown">
+                                            <span class="material-icons">notifications</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" data-toggle="dropdown">
+                                            <img src="img/haha.png" style="width:40px; height: 40px; border-radius:50%;" />
+                                            <span class="xp-user-live"></span>
+                                        </a>
+                                        <ul class="dropdown-menu small-menu">
+                                            <li>
+                                                <a href="#"><span class="material-icons">person_outline</span>Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><span class="material-icons">settings</span>Settings</a>
+                                            </li>
+                                            <li>
+                                                <a href="loginInterfaceProject.html" class="load-page" data-page="loginInterfaceProject.html"><span class="material-icons">logout</span>Logout</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="custom-alert">
+                    <div class="alert-title">Request Pending</div>
+                    <p>We’ll update you once it’s approved.</p>
+                </div>
+            </div>
+
+
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".xp-menubar").on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $('#content').toggleClass('active');
+            });
+
+            $(".xp-menubar, .body-overlay").on('click', function () {
+                $('#sidebar, .body-overlay').toggleClass('show-nav');
+            });
+        });
+    </script>
+</body>
+
+</html>

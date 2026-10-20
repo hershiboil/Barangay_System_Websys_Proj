@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --accent-color: #6BA7C2;
+    --base-color: white;
+    --text-color: #2e2b41;
+    --input-color: #f3f0ff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: Poppins, Segoe UI, sans-serif;
+    font: 12pt;
+    color: var(--text-color);
+    text-align: center;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--base-color);
+}
+
+.left-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px; /* Prevents content from touching edges */
+    
+}
+
+.right-box {
+    background-color: #6BA7C2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Remove fixed full height */
+    padding: 20px; /* Adds spacing */
+
+}
+
+.wrapper{
+    box-sizing: border-box;
+    background-color: var(--base-color);
+    height: 100vh;
+    width: 80vw;  
+    min-width: 600px;
+    max-width: 800px;
+    padding: 10px;
+    border-radius: 20px 0px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+
+h1{
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+form{
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--accent-color);
+    fill: var(--base-color);
+    color: var(--base-color);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+form input{
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--input-color);
+    border-left: none;
+    background-color: var(--input-color);
+    transition: 150ms ease;
+}
+
+form input:hover{
+    border: var(--accent-color);
+}
+
+form input:focus{
+    outline: none;
+    border-color: var(--text-color);
+}
+
+div:has(input:focus) > label{
+    background-color: var(--text-color);
+}
+
+form input::placeholder{
+    color: var(--text-color);
+}
+
+form button{
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+form button:hover{
+    transform: scale(1.05); /* Slightly increase the size */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow for emphasis */
+    background-color: var(--text-color);
+}
+form button:focus{
+    outline: none;
+    background-color: var(--text-color);
+}
+
+
+.right-box img {
+    max-width: 90%; /* Prevents image from being too large */
+    height: auto;
+}
+
+
+a{
+    text-decoration: none;
+    color: var(--accent-color);
+}
+a:hover{
+    text-decoration: underline;
+}
+@media(max-width: 1100px){
+    .wrapper{
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    .left-box {
+        min-height: 80vh; /* Reduce height so form is always visible */
+        max-height: 80;
+    }
+    .right-box {
+        min-height: 10vh;
+        max-height: 10vh;
+    }
+
+    .right-box img {
+        max-width: 10%; /* Prevents image from being too large */
+        height: auto;
+    }
+
+    .wrapper {
+        max-width: 300px; /* Make form even smaller on small screens */
+    }
+}
+
+.input-control.error input {
+    border-color: #f06272;
+}
+
+.input-control{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control .input-wrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.input-control .error {
+    color: #f06272;
+    font-size: 9px;
+    height: 13px;
+    margin-top: 3px; /* Adds space below the input */
+    text-align: left;
+    width: 100%;
+    padding-left: 10px;
+}
+
+
+.input-control.error label {
+    background-color: #f06272;
+}
+
+

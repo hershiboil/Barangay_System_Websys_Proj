@@ -1,0 +1,127 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-outline-secondary {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.form-control, .form-select {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+}
+
+#notificationDropdown, #profileDropdown {
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 123, 255, 0.2);
+}
+
+#content {
+  border-radius: 16px;
+  padding: 80px 5px;
+  margin: 5px;
+  margin-top: -60px;
+  background: linear-gradient(135deg, #e6f0ff, #cce0ff);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+#content .form-control,
+#content .form-select,
+#content textarea {
+  background-color: #f0f7ff;
+  border: 1px solid #90caf9;
+  border-radius: 12px;
+  padding: 10px 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* On focus styling */
+#content .form-control:focus,
+#content .form-select:focus,
+#content textarea:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+  background-color: #ffffff;
+}
+
+.sidebar-header h3 {
+  color: white;
+  font-weight: 600;
+}
+
+.material-icons {
+  vertical-align: middle;
+  color: #007bff;
+}
+
+.dropdown-menu {
+  font-size: 14px;
+}
+
+#description {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
+  background-color: #fff;
+}
+
+
+#popup {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  display: none;
+}
+
+#popup.show {
+  display: block;
+}
+
+input[type="file"]::file-selector-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+select:focus, textarea:focus, input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#popup {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border-radius: 12px;
+  font-weight: 500;
+  background-color: #d4edda;
+  color: #155724;
+  display: none;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(72, 180, 97, 0.2);
+  border: 1px solid #c3e6cb;
+}
+
+#popup.show {
+  display: block;
+}

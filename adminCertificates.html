@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>CRUD Dashboard</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+    <style>
+    .container-fluid {
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .card-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 70%; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; 
+    height: 150px;
+}
+
+.right-box button {
+    white-space: nowrap; 
+    padding: 8px 16px; 
+    font-size: 14px; 
+    width: 100%; 
+    max-width: 200px; 
+}
+
+
+.left-box {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    height: 100%; 
+}
+
+.right-box button {
+    white-space: nowrap; 
+    padding: 8px 16px; 
+    font-size: 14px; 
+    width: auto; 
+    min-width: 150px; 
+    max-width: 200px; 
+}
+
+#viewRequestIndigency {
+    display: block; 
+    width: 100%; 
+    max-width: 180px; 
+    text-align: center;
+}
+
+
+
+    .card-container i {
+        font-size: 80px;
+    }
+
+    .top-navbar {
+        margin-bottom: 15px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3><img src="img/haha.png" class="img-fluid" style="height: 90px; width: 90px"  /><span>CONNECT</span></h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="dropdown">
+                    <a href="adminIndex.html"  class="load-page" data-page="adminIndex.html">
+                    <i class="material-icons">home</i>Home</a>
+                </li>
+                <li>
+                    <a href="adminCertificates.html"  class="load-page" data-page="adminCertificates.html">
+                    <i class="material-icons">description</i><span>Certificates</span></a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">
+                    <i class="material-icons">report</i>
+                    <span>Complaints</span></a>
+                    <ul class="collapse list-unstyled menu" id="pageSubmenu3">
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">
+                    <i class="material-icons">people</i><span>Residents' Information</span></a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu4" data-toggle="collapse" aria-expanded="false">
+                    <i class="material-icons">gavel</i><span>Blotter</span></a>
+                </li>             
+            </ul>
+        </nav>
+
+        <div id="content">
+            <div class="top-navbar">
+                <div class="xp-topbar">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="xp-menubar">
+                                <span class="material-icons text-white">signal_cellular_alt</span>
+                            </div>
+                        </div>
+                        <div class="col-6 text-right">
+                            <nav class="navbar p-0">
+                                <ul class="nav navbar-nav flex-row ml-auto">
+                                    <li class="dropdown nav-item active">
+                                        <a href="#" class="nav-link" data-toggle="dropdown">
+                                            <span class="material-icons">notifications</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" data-toggle="dropdown">
+                                            <img src="img/haha.png" style="width:40px; height: 40px; border-radius:50%;" />
+                                            <span class="xp-user-live"></span>
+                                        </a>
+                                        <ul class="dropdown-menu small-menu">
+                                            <li>
+                                                <a href="#"><span class="material-icons">person_outline</span>Profile</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><span class="material-icons">settings</span>Settings</a>
+                                            </li>
+                                            <li>
+                                                <a href="#"><span class="material-icons">logout</span>Logout</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="card-container" style="background-color: #e6f4ff;">
+                    <div class="row">
+                        <div class="col-6 left-box">
+                            <i class="material-icons">assignment</i>
+                        </div>
+                        <div class="col-6 right-box">
+                            <h5 class="card-title font-weight-bold">Indigency</h5>
+                            <button class="btn btn-outline-secondary" id="viewRequestIndigency">View Request</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container"  style="background-color: #e3d1f5;">
+                    <div class="row">
+                        <div class="col-6 left-box">
+                            <i class="material-icons">assignment</i>
+                        </div>
+                        <div class="col-6 right-box">
+                            <h5 class="card-title font-weight-bold">Clearance</h5>
+                            <button class="btn btn-outline-secondary" id="viewRequestClearance">View Request</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container"  style="background-color: #ffe5b4;">
+                    <div class="row">
+                        <div class="col-6 left-box">
+                            <i class="material-icons">assignment</i>
+                        </div>
+                        <div class="col-6 right-box">
+                            <h5 class="card-title font-weight-bold">Residency</h5>
+                            <button class="btn btn-outline-secondary" id="viewRequestResidency">View Request</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container"  style="background-color: #ffccd5;">
+                    <div class="row">
+                        <div class="col-6 left-box">
+                            <i class="material-icons">assignment</i>
+                        </div>
+                        <div class="col-6 right-box">
+                            <h5 class="card-title font-weight-bold">Business</h5>
+                            <button class="btn btn-outline-secondary" id="viewRequesBusiness">View Request</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+    const sidebarToggle = $(".xp-menubar");
+    const sidebar = $("#sidebar");
+    const content = $("#content");
+    const indigencyBtn = "#viewRequestIndigency"; 
+    const clearanceBtn = "#viewRequestClearance";
+    const residencyBtn = "#viewRequestResidency";
+    const businessBtn = "#viewRequestBusiness"; 
+
+    sidebarToggle.on("click", function () {
+        sidebar.toggleClass("active");
+        content.toggleClass("active");
+    });
+
+    sidebarToggle.add(".body-overlay").on("click", function () {
+        sidebar.add(".body-overlay").toggleClass("show-nav");
+    });
+
+    $(document).on("click", indigencyBtn, function () {
+        loadCertificate("Certificate of Indigency");
+    });
+
+    $(document).on("click", clearanceBtn, function () {
+        loadCertificate("Certificate of Clearance");
+    });
+
+    $(document).on("click", residencyBtn, function () {
+        loadCertificate("Certificate of Residency");
+    });
+
+    $(document).on("click", businessBtn, function () {
+        loadCertificate("Business Certificate");
+    });
+
+    function loadCertificate(title) {
+        content.html(`
+            <div class="container mt-4">
+                <h2>${title}</h2>
+                <button class="btn btn-primary" id="backButton">Back</button>
+            </div>
+        `);
+    }
+
+    $(document).on("click", "#backButton", function () {
+        location.reload();
+    });
+});
+
+    </script>
+
+    </body>
+
+</html>
+
+
